@@ -1,0 +1,200 @@
+<?php
+require '../assets/core/init.php';
+
+  $getranap = mysqli_query($connect, "SELECT * FROM daftar_layanan WHERE kategoriLayanan = 'Rawat Inap'");
+?>
+<html>
+<head>
+  <title>RSGH - Rumah Sakit Graha Hermine Batam</title>
+  <link rel="icon" href="../assets/image/gh.png" sizes="32x32" type="image/png">
+
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <!-- End Bootstrap -->
+
+  <!-- Fonts -->
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&amp;lang=en"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com"/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap"/>
+  <!-- End Fonts -->
+
+  <style>
+
+    body{
+      margin: 0;
+      padding: 0;
+      font-family: "Roboto", sans-serif;
+    }
+
+    h5{
+      text-align: center;
+      text-transform: uppercase;
+      color: white; 
+    }
+
+    .mainmenu {
+      width: 100%;
+      position: relative;
+    }
+
+    .weblogo {
+      background-color: #5f5f5f;
+      width: 100%;
+      text-align: center;
+      color: white;
+      vertical-align: middle;
+      font-size: 25px;
+      padding: 10px 0px;
+      border: none;
+    }
+
+    .layanan{
+      text-align: left;
+    }
+
+    .imgcontainer{
+      box-shadow: 1px 1px 2px #5f5f5f;
+      margin: 0.5%;
+      width: 32%;
+      border-radius: 5px 5px 0 0;
+      display: inline-block;
+    }
+
+    .imgheader{
+      top: 0;
+      background-color: rgb(0, 123, 59);
+      padding: auto;
+      border-radius: 5px 5px 0 0;
+    }
+
+    .footer {
+      width: 100%;
+      height: 30%;
+      background-color: #5f5f5f;
+      bottom: 0;
+    }
+  </style>
+</head>
+<body>
+<!-- Header -->
+  <div class="mainmenu">
+    <div class="weblogo">
+    <span style="font-size:20px"> <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-headset" viewBox="0 0 16 16">
+  <path d="M8 1a5 5 0 0 0-5 5v1h1a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a6 6 0 1 1 12 0v6a2.5 2.5 0 0 1-2.5 2.5H9.366a1 1 0 0 1-.866.5h-1a1 1 0 1 1 0-2h1a1 1 0 0 1 .866.5H11.5A1.5 1.5 0 0 0 13 12h-1a1 1 0 0 1-1-1V8a1 1 0 0 1 1-1h1V6a5 5 0 0 0-5-5z"/>
+</svg>&nbsp;Customer Care (0778) 363 318</span> &nbsp; | &nbsp; <span style="font-size:20px; color:red;"> <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-telephone-fill" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z"/>
+</svg>&nbsp;Emergency (0778) 363 127 </span>
+    </div>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="Beranda.php" style="color: rgb(0, 123, 59);"><img src="../assets/image/logo_gh_3.png" width="75" height="auto"> RS. Graha Hermine | Batam</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" href="Beranda.php">Beranda</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="Profil.php">Profil</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Pelayanan
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <a class="dropdown-item" href="Poliklinik.php">Poliklinik</a>
+              <a class="dropdown-item" href="Gawat-Darurat.php">Instalasi Gawat Darurat (IGD)</a>
+              <a class="dropdown-item" href="Rawat-Inap.php">Layanan Rawat Inap</a>
+              <a class="dropdown-item" href="Ibu-Anak.php">Layanan Ibu dan Anak</a>
+              <a class="dropdown-item" href="Unggulan.php">Layanan Unggulan</a>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="Jadwal.php">Jadwal Dokter</a>
+          </li>
+          <li class="nav-item">
+          <a class="nav-link" href="BeritaArtikel.php">Berita dan Artikel</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Informasi
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" href="Partnership.php">Partnership</a>
+              <a class="dropdown-item" href="Galeri.php">Galeri</a>
+              <a class="dropdown-item" href="Karir.php">Pusat Karir</a>
+              <a class="dropdown-item" href="FAQ.php">Hubungi Kami</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </nav>
+</div>
+<br>
+<!-- End Header -->
+
+<div class="container" style="min-height: 100%;">
+  <h3>LAYANAN RAWAT INAP</h3> <br>
+
+  <div class="layanan">
+    <?php
+          while ($listranap = mysqli_fetch_array($getranap)) {
+            echo "<a href='Pelayanan.php?id=$listranap[layananID]'>";
+    echo"<div class='imgcontainer'>";
+      echo"<div class='imgheader'>";
+        echo"<h5>".$listranap['namaLayanan']."</h5>";
+      echo"</div>";
+      echo"<img src='../assets/images/".$listranap['fotoUtama']."' width='100%'>";
+    echo"</div></a>";
+    } ?>
+  </div>
+</div> <br>
+
+<!-- Footer -->
+<div class="footer" style="padding-top:20px;">
+<div class="container">
+<div class="row">
+    <div class="col-sm">
+  <h3 style="font-size:20px; color:white;">RS. Graha Hermine | Batam</h3>
+  <div style="width: 100%; background-color: white;">
+  <hr>
+</div>
+<h3 style="font-size:15px; color:white; word-wrap: normal|break-word|initial|inherit; width:100%">Komp. Ruko Asih Raya, Blok B No. 9-15 <br>Jl. Letjend Suprapto, Buliang, <br>Kec. Batu Aji, Kota Batam <br>Kepulauan Riau 29424</h3>
+</div>
+<div class="col-sm">
+<button onclick="window.location.href='https://www.instagram.com/rs_grahahermine/';" style="width:40; height:40; border-radius: 8px; border-style: solid"> 
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" fill="rgb(0, 123, 59)" class="bi bi-instagram" viewBox="0 0 16 16">
+  <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"/>
+</svg>
+</button>
+<button onclick="window.location.href='https://www.facebook.com/rumahsakitgrahahermine';" style="width:40; height:40; border-radius: 8px; border-style: solid"> 
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" fill="rgb(0, 123, 59)" class="bi bi-facebook" viewBox="0 0 16 16">
+  <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"/>
+</svg>
+</button>
+<button onclick="window.location.href='https://www.linkedin.com/company/rumah-sakit-graha-hermine';" style="width:40; height:40; border-radius: 8px; border-style: solid"> 
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" fill="rgb(0, 123, 59)" class="bi bi-linkedin" viewBox="0 0 16 16">
+  <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"/>
+</svg>
+</button>
+<button onclick="window.location.href='https://www.youtube.com/channel/UCrVa5dDtzD7ARnE3TqN4Wig/featured';" style="width:40; height:40; border-radius: 8px; border-style: solid"> 
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(0, 123, 59)" class="bi bi-youtube" viewBox="0 0 16 16">
+  <path d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.007 2.007 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.007 2.007 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31.4 31.4 0 0 1 0 7.68v-.122C.002 7.343.01 6.6.064 5.78l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.007 2.007 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A99.788 99.788 0 0 1 7.858 2h.193zM6.4 5.209v4.818l4.157-2.408L6.4 5.209z"/>
+</svg>
+</button>
+</div>
+<div class="col-sm">
+</div>
+</div>
+</div>
+</div>
+<!-- End Footer -->
+
+<!-- Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+<!-- End Bootstrap JS -->
+</body>
+</html>

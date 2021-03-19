@@ -1,0 +1,102 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap");
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+#mainmenu {
+  width: 100%;
+  position: relative;
+}
+
+.weblogo {
+  background-color: blue;
+  width: 100%;
+  text-align: center;
+  color: white;
+  vertical-align: middle;
+  font-size: 25px;
+  padding: 10px 0px;
+}
+
+#carouselExampleIndicators {
+  width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 3%;
+  position: relative;
+}
+
+p {
+  font-weight: bold;
+  font-size: 30px;
+  font-family: "Roboto", sans-serif;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 5%;
+  position: relative;
+  text-align: center;
+  color: black;
+}
+
+h4 {
+  font-size: 30px;
+  font-family: "Roboto", sans-serif;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 2%;
+  margin-top: -1%;
+  position: relative;
+  text-align: center;
+  color: black;
+}
+
+.imgkotak {
+  width: 100%;
+  max-width: 75px;
+  height: 75px;
+  margin-top: 5%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 5%;
+}
+
+#kotak {
+  text-align: center;
+  padding: 5px;
+  margin-bottom: 3%;
+  margin-top: -5%;
+}
+
+h5 {
+  color: black;
+  font-size: 15px;
+  font-family: "Roboto", sans-serif;
+  word-wrap: break-word;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  text-align: center;
+}
+
+#boxs {
+  display: inline-block;
+  max-width: 200px;
+  max-height: 200px;
+  border-style: solid;
+  border-width: 2px;
+  border-color: black;
+  border-radius: 25px;
+  border: 2px solid rgb(0, 123, 59);
+  padding: 20px;
+  width: 180px;
+  vertical-align: middle;
+  height: 180px;
+  margin: 5px;
+  margin-bottom: 25px;
+}
+
+.navbar-brand {
+}
