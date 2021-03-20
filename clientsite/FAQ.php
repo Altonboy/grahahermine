@@ -6,9 +6,9 @@ require '../assets/core/init.php';
     if(isset($_POST['kirimemail'])){
       ini_set( 'display_errors', 1 );   
     error_reporting( E_ALL );    
-    $from = $_POST['emailpengirim'];    
+    $from = "altonasdasd@gmail.com";    
     $to = "altonboy99@gmail.com";    
-    $subject = $_POST['subjek'];    
+    $subject = $_POST['subjek']." - ".$_POST['emailpengirim'];    
     $message = $_POST['isiemail'];   
     $headers = "From:" . $from;    
     mail($to,$subject,$message, $headers);    
